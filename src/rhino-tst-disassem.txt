@@ -1,4 +1,4 @@
-1 C000 C334C3            JP      0C334H        .4.
+1 C000 C33CC3            JP      0C33CH        .<.
   C003 CD7F0A            CALL    0A7FH         ..
   C006 222FC0            LD      (0C02FH),HL   "/.
   C009 F3                DI                    .
@@ -26,7 +26,7 @@
 4 C02F 00                NOP                   .
   C030 00                NOP                   .
 2 C031 E5                PUSH    HL            .
-  C032 CD18C3            CALL    0C318H        ...
+  C032 CD20C3            CALL    0C320H        . .
   C035 E1                POP     HL            .
   C036 C8                RET     Z             .
   C037 11ABC0            LD      DE,0C0ABH     ...
@@ -49,7 +49,7 @@
   C05C D1                POP     DE            .
   C05D CB7C              BIT     07H,H         .|
   C05F 2803              JR      Z,0C064H      (.
-  C061 CD23C3            CALL    0C323H        .#.
+  C061 CD2BC3            CALL    0C32BH        .+.
 1 C064 AF                XOR     A             .
   C065 BC                CP      H             .
   C066 2005              JR      NZ,0C06DH      .
@@ -68,7 +68,7 @@
   C07F FD7401            LD      (IY+01H),H    .t.
   C082 D5                PUSH    DE            .
   C083 E1                POP     HL            .
-  C084 CD23C3            CALL    0C323H        .#.
+  C084 CD2BC3            CALL    0C32BH        .+.
   C087 E5                PUSH    HL            .
   C088 D1                POP     DE            .
 1 C089 D5                PUSH    DE            .
@@ -84,7 +84,7 @@
   C09B FD23              INC     IY            .#
   C09D 10A6              DJNZ    0C045H        ..
   C09F 21ABC0            LD      HL,0C0ABH     !..
-  C0A2 CD18C3            CALL    0C318H        ...
+  C0A2 CD20C3            CALL    0C320H        . .
   C0A5 2098              JR      NZ,0C03FH      .
   C0A7 AF                XOR     A             .
   C0A8 FE01              CP      01H           ..
@@ -104,7 +104,7 @@
   C0B7 00                NOP                   .
   C0B8 00                NOP                   .
 82C0B9 DD21DD21          LD      IX,21DDH      .!.!
-  C0BD 0B                DEC     BC            .
+  C0BD 13                INC     DE            .
   C0BE C3DD77            JP      77DDH         ..w
   C0C1 00                NOP                   .
   C0C2 DD36012B          LD      (IX+01H),2BH  .6.+
@@ -113,17 +113,17 @@
   C0CA CD1FC1            CALL    0C11FH        ...
   C0CD C8                RET     Z             .
   C0CE DD36012D          LD      (IX+01H),2DH  .6.-
-  C0D2 CD23C3            CALL    0C323H        .#.
+  C0D2 CD2BC3            CALL    0C32BH        .+.
 1 C0D5 E5                PUSH    HL            .
   C0D6 E5                PUSH    HL            .
-  C0D7 CD11C3            CALL    0C311H        ...
+  C0D7 CD19C3            CALL    0C319H        ...
   C0DA D1                POP     DE            .
   C0DB 213041            LD      HL,4130H      !0A
 1 C0DE 7E                LD      A,(HL)        ~
   C0DF 23                INC     HL            #
   C0E0 FE20              CP      20H           .
   C0E2 28FA              JR      Z,0C0DEH      (.
-  C0E4 DD210DC3          LD      IX,0C30DH     .!..
+  C0E4 DD2115C3          LD      IX,0C315H     .!..
 1 C0E8 DD7700            LD      (IX+00H),A    .w.
   C0EB DD23              INC     IX            .#
   C0ED B7                OR      A             .
@@ -133,13 +133,13 @@
   C0F2 18F4              JR      0C0E8H        ..
 1 C0F4 D1                POP     DE            .
   C0F5 16DE              LD      D,0DEH        ..
-1 C0F7 CD2BC3            CALL    0C32BH        .+.
-  C0FA DD210BC3          LD      IX,0C30BH     .!..
+1 C0F7 CD33C3            CALL    0C333H        .3.
+  C0FA DD2113C3          LD      IX,0C313H     .!..
   C0FE DD7E00            LD      A,(IX+00H)    .~.
   C101 CDE0C2            CALL    0C2E0H        ...
   C104 3E3F              LD      A,3FH         >?
   C106 CDE0C2            CALL    0C2E0H        ...
-  C109 CDEBC2            CALL    0C2EBH        ...
+  C109 CDF0C2            CALL    0C2F0H        ...
   C10C BA                CP      D             .
   C10D C8                RET     Z             .
   C10E 57                LD      D,A           W
@@ -147,7 +147,7 @@
   C111 83                ADD     A,E           .
   C112 FE5F              CP      5FH           ._
   C114 F2F7C0            JP      P,0C0F7H      ...
-  C117 CDF4C2            CALL    0C2F4H        ...
+  C117 CDFCC2            CALL    0C2FCH        ...
   C11A AF                XOR     A             .
   C11B FE01              CP      01H           ..
   C11D C9                RET                   .
@@ -186,7 +186,7 @@
   C152 C39A0A            JP      0A9AH         ...
 6 C155 3E49              LD      A,49H         >I
   C157 CDE0C2            CALL    0C2E0H        ...
-  C15A CDEBC2            CALL    0C2EBH        ...
+  C15A CDF0C2            CALL    0C2F0H        ...
   C15D C9                RET                   .
 2 C15E CDB8C1            CALL    0C1B8H        ...
   C161 CDCEC1            CALL    0C1CEH        ...
@@ -225,7 +225,7 @@
   C1A2 CDE0C2            CALL    0C2E0H        ...
   C1A5 3E3F              LD      A,3FH         >?
   C1A7 CDE0C2            CALL    0C2E0H        ...
-  C1AA CDEBC2            CALL    0C2EBH        ...
+  C1AA CDF0C2            CALL    0C2F0H        ...
   C1AD 2600              LD      H,00H         &.
   C1AF 6F                LD      L,A           o
   C1B0 2A2DC0            LD      HL,(0C02DH)   *-.
@@ -265,9 +265,9 @@
   C203 211400            LD      HL,0014H      !..
   C206 3AD2C2            LD      A,(0C2D2H)    :..
   C209 CDBBC0            CALL    0C0BBH        ...
-  C20C CD2BC3            CALL    0C32BH        .+.
-  C20F CD2BC3            CALL    0C32BH        .+.
-  C212 CD2BC3            CALL    0C32BH        .+.
+  C20C CD33C3            CALL    0C333H        .3.
+  C20F CD33C3            CALL    0C333H        .3.
+  C212 CD33C3            CALL    0C333H        .3.
   C215 210100            LD      HL,0001H      !..
   C218 CD2DC2            CALL    0C22DH        .-.
   C21B 3E14              LD      A,14H         >.
@@ -275,7 +275,7 @@
   C21E CB3F              SRL     A             .?
   C220 6F                LD      L,A           o
   C221 2600              LD      H,00H         &.
-  C223 CD23C3            CALL    0C323H        .#.
+  C223 CD2BC3            CALL    0C32BH        .+.
   C226 3AD2C2            LD      A,(0C2D2H)    :..
   C229 CDBBC0            CALL    0C0BBH        ...
   C22C C9                RET                   .
@@ -326,7 +326,7 @@
   C28C F1                POP     AF            .
   C28D C9                RET                   .
 1 C28E 2A9AC2            LD      HL,(0C29AH)   *..
-  C291 CD23C3            CALL    0C323H        .#.
+  C291 CD2BC3            CALL    0C32BH        .+.
   C294 3E44              LD      A,44H         >D
   C296 CDBBC0            CALL    0C0BBH        ...
   C299 C9                RET                   .
@@ -363,7 +363,7 @@
   C2CC 3E58              LD      A,58H         >X
   C2CE CDE0C2            CALL    0C2E0H        ...
   C2D1 C9                RET                   .
-C C2D2 08                EX      AF,AF'        .
+C C2D2 43                LD      B,E           C
 96C2D3 2A2B2A            LD      HL,(2A2BH)    *+*
   C2D6 2D                DEC     L             -
   C2D7 C0                RET     NZ            .
@@ -377,108 +377,108 @@ B C2E0 08                EX      AF,AF'        .
   C2E5 28FA              JR      Z,0C2E1H      (.
   C2E7 08                EX      AF,AF'        .
   C2E8 D3EB              OUT     (0EBH),A      ..
-  C2EA C9                RET                   .
-4 C2EB DBEA              IN      A,(0EAH)      ..
-  C2ED CB7F              BIT     07H,A         .
-  C2EF 28FA              JR      Z,0C2EBH      (.
-  C2F1 DBEB              IN      A,(0EBH)      ..
-  C2F3 C9                RET                   .
-1 C2F4 DD210BC3          LD      IX,0C30BH     .!..
-1 C2F8 DD7E00            LD      A,(IX+00H)    .~.
-  C2FB DD23              INC     IX            .#
-  C2FD B7                OR      A             .
-  C2FE 2805              JR      Z,0C305H      (.
-  C300 CDE0C2            CALL    0C2E0H        ...
-  C303 18F3              JR      0C2F8H        ..
-1 C305 3E0D              LD      A,0DH         >.
-  C307 CDE0C2            CALL    0C2E0H        ...
-  C30A C9                RET                   .
-3AC30B 313500            LD      SP,0035H      15.
-  C30E 00                NOP                   .
-12C30F CD00CD            CALL    0CD00H        ...
-  C312 9A                SBC     A,D           .
-  C313 0A                LD      A,(BC)        .
-  C314 CDBD0F            CALL    0FBDH         ...
+  C2EA FE1F              CP      1FH           ..
+  C2EC F43A03            CALL    P,033AH       .:.
+  C2EF C9                RET                   .
+4 C2F0 DBEA              IN      A,(0EAH)      ..
+  C2F2 CB7F              BIT     07H,A         .
+  C2F4 28FA              JR      Z,0C2F0H      (.
+  C2F6 DBEB              IN      A,(0EBH)      ..
+  C2F8 CD3A03            CALL    033AH         .:.
+  C2FB C9                RET                   .
+1 C2FC DD2113C3          LD      IX,0C313H     .!..
+1 C300 DD7E00            LD      A,(IX+00H)    .~.
+  C303 DD23              INC     IX            .#
+  C305 B7                OR      A             .
+  C306 2805              JR      Z,0C30DH      (.
+  C308 CDE0C2            CALL    0C2E0H        ...
+  C30B 18F3              JR      0C300H        ..
+1 C30D 3E0D              LD      A,0DH         >.
+  C30F CDE0C2            CALL    0C2E0H        ...
+  C312 C9                RET                   .
+2 C313 0A                LD      A,(BC)        .
+14C314 CDBD0F            CALL    0FBDH         ...
   C317 C9                RET                   .
-2 C318 0610              LD      B,10H         ..
-1 C31A 7E                LD      A,(HL)        ~
-  C31B 23                INC     HL            #
-  C31C FE00              CP      00H           ..
-  C31E C0                RET     NZ            .
-  C31F 10F9              DJNZ    0C31AH        ..
-  C321 BF                CP      A             .
-  C322 C9                RET                   .
-6 C323 7C                LD      A,H           |
-  C324 2F                CPL                   /
-  C325 67                LD      H,A           g
-  C326 7D                LD      A,L           }
-  C327 2F                CPL                   /
-  C328 6F                LD      L,A           o
-  C329 23                INC     HL            #
+  C318 00                NOP                   .
+1 C319 CD9A0A            CALL    0A9AH         ...
+  C31C CDBD0F            CALL    0FBDH         ...
+  C31F C9                RET                   .
+2 C320 0610              LD      B,10H         ..
+1 C322 7E                LD      A,(HL)        ~
+  C323 23                INC     HL            #
+  C324 FE00              CP      00H           ..
+  C326 C0                RET     NZ            .
+  C327 10F9              DJNZ    0C322H        ..
+  C329 BF                CP      A             .
   C32A C9                RET                   .
-4 C32B C5                PUSH    BC            .
-  C32C 010005            LD      BC,0500H      ...
-  C32F CD6000            CALL    0060H         .@.
-  C332 C1                POP     BC            .
-  C333 C9                RET                   .
-5 C334 CD7AC3            CALL    0C37AH        .z.
-  C337 FE58              CP      58H           .X
-  C339 C8                RET     Z             .
-  C33A FE5A              CP      5AH           .Z
-  C33C 30F6              JR      NC,0C334H     0.
-  C33E D644              SUB     44H           .D
-  C340 38F2              JR      C,0C334H      8.
-1 C342 1600              LD      D,00H         ..
-  C344 5F                LD      E,A           _
-  C345 2164C3            LD      HL,0C364H     !d.
-  C348 19                ADD     HL,DE         .
-  C349 7E                LD      A,(HL)        ~
-  C34A B7                OR      A             .
-  C34B 28E7              JR      Z,0C334H      (.
-  C34D 210F00            LD      HL,000FH      !..
-  C350 CB7F              BIT     07H,A         .
-  C352 F5                PUSH    AF            .
-  C353 C423C3            CALL    NZ,0C323H     .#.
-  C356 F1                POP     AF            .
-  C357 CBBF              RES     07H,A         ..
-  C359 32D2C2            LD      (0C2D2H),A    2..
-  C35C CDBBC0            CALL    0C0BBH        ...
-  C35F CCC6C2            CALL    Z,0C2C6H      ...
-  C362 18D0              JR      0C334H        ..
-1 C364 C7                RST     00H           .
-  C365 47                LD      B,A           G
-  C366 C645              ADD     A,45H         .E
-  C368 C442C3            CALL    NZ,0C342H     .B.
-  C36B C24100            JP      NZ,0041H      .A.
-  C36E 00                NOP                   .
-  C36F C1                POP     BC            .
-  C370 00                NOP                   .
-  C371 00                NOP                   .
-  C372 46                LD      B,(HL)        F
-  C373 C8                RET     Z             .
-  C374 C5                PUSH    BC            .
-  C375 43                LD      B,E           C
+6 C32B 7C                LD      A,H           |
+  C32C 2F                CPL                   /
+  C32D 67                LD      H,A           g
+  C32E 7D                LD      A,L           }
+  C32F 2F                CPL                   /
+  C330 6F                LD      L,A           o
+  C331 23                INC     HL            #
+  C332 C9                RET                   .
+4 C333 C5                PUSH    BC            .
+  C334 010005            LD      BC,0500H      ...
+  C337 CD6000            CALL    0060H         .@.
+  C33A C1                POP     BC            .
+  C33B C9                RET                   .
+5 C33C CD82C3            CALL    0C382H        ...
+  C33F FE58              CP      58H           .X
+  C341 C8                RET     Z             .
+1 C342 FE5A              CP      5AH           .Z
+  C344 30F6              JR      NC,0C33CH     0.
+  C346 D644              SUB     44H           .D
+  C348 38F2              JR      C,0C33CH      8.
+  C34A 1600              LD      D,00H         ..
+  C34C 5F                LD      E,A           _
+  C34D 216CC3            LD      HL,0C36CH     !l.
+  C350 19                ADD     HL,DE         .
+  C351 7E                LD      A,(HL)        ~
+  C352 B7                OR      A             .
+  C353 28E7              JR      Z,0C33CH      (.
+  C355 210F00            LD      HL,000FH      !..
+  C358 CB7F              BIT     07H,A         .
+  C35A F5                PUSH    AF            .
+  C35B C42BC3            CALL    NZ,0C32BH     .+.
+  C35E F1                POP     AF            .
+  C35F CBBF              RES     07H,A         ..
+  C361 32D2C2            LD      (0C2D2H),A    2..
+  C364 CDBBC0            CALL    0C0BBH        ...
+  C367 CCC6C2            CALL    Z,0C2C6H      ...
+  C36A 18D0              JR      0C33CH        ..
+1 C36C C7                RST     00H           .
+  C36D 47                LD      B,A           G
+  C36E C645              ADD     A,45H         .E
+  C370 C442C3            CALL    NZ,0C342H     .B.
+  C373 C24100            JP      NZ,0041H      .A.
   C376 00                NOP                   .
-  C377 48                LD      C,B           H
+  C377 C1                POP     BC            .
   C378 00                NOP                   .
-  C379 44                LD      B,H           D
-1 C37A 213640            LD      HL,4036H      !6@
-  C37D 0607              LD      B,07H         ..
-  C37F AF                XOR     A             .
-1 C380 77                LD      (HL),A        w
-  C381 23                INC     HL            #
-  C382 10FC              DJNZ    0C380H        ..
-1 C384 CD2B00            CALL    002BH         .+.
-  C387 B7                OR      A             .
-  C388 28FA              JR      Z,0C384H      (.
-  C38A C9                RET                   .
+  C379 00                NOP                   .
+  C37A 46                LD      B,(HL)        F
+  C37B C8                RET     Z             .
+  C37C C5                PUSH    BC            .
+  C37D 43                LD      B,E           C
+  C37E 00                NOP                   .
+  C37F 48                LD      C,B           H
+  C380 00                NOP                   .
+  C381 44                LD      B,H           D
+1 C382 213640            LD      HL,4036H      !6@
+  C385 0607              LD      B,07H         ..
+  C387 AF                XOR     A             .
+1 C388 77                LD      (HL),A        w
+  C389 23                INC     HL            #
+  C38A 10FC              DJNZ    0C388H        ..
+1 C38C CD2B00            CALL    002BH         .+.
+  C38F B7                OR      A             .
+  C390 28FA              JR      Z,0C38CH      (.
+  C392 C9                RET                   .
  
  
  
 402D = PROGRAM ENTRY POINT
- 
- 
- 
  
  
  
@@ -521,48 +521,49 @@ REFERENCE SUFFIX INDICATES REFERENCING INST TYPE
   X =  LD  (NN),A    ,   OUT (N),A
  
  
-0000  C13EU C14BV C195U C1ADV C221V C22DV C31CV C342V 
+0000  C13EU C14BV C195U C1ADV C221V C22DV C324V C34AV 
 0001  C0A8V C11BV C215U 
 0002  C1D8V 
 0004  C1C2V 
-0007  C37DV 
+0007  C385V 
 0008  C043V C16DV C18DV C1EEV 
-000D  C305V 
-000F  C34DU 
-0010  C01CU C03AU C29FU C2A4V C2BEU C318V 
+000D  C30DV 
+000F  C355U 
+0010  C01CU C03AU C29FU C2A4V C2BEU C320V 
 0014  C203U C21BV 
 0015  C2B4U 
 0019  C245V 
+001F  C2EAV 
 0020  C0E0V C10FV 
-002B  C0C2V C384L 
+002B  C0C2V C38CL 
 002D  C0CEV 
 0032  C263U 
-0035  C30BU 
 003F  C104V C1A5V 
 0040  C179V C19FV 
-0041  C36BP 
-0044  C1D3V C294V C33EV 
-0045  C1BDV C287V C366V 
+0041  C373P 
+0044  C1D3V C294V C346V 
+0045  C1BDV C287V C36EV 
 0046  C1E9V 
 0049  C08CV C155V 
 0055  C068V C073U 
-0058  C17FV C2CCV C337V 
-005A  C33AV 
+0058  C17FV C2CCV C33FV 
+005A  C342V 
 005F  C112V 
-0060  C32FL 
+0060  C337L 
 0080  C11FV C12BV 
 00DE  C0F5V 
 00E8  C00AX 
-00EA  C2E1T C2EBT 
-00EB  C2E8X C2F1T 
+00EA  C2E1T C2F0T 
+00EB  C2E8X C2F6T 
 00FF  C131V 
-0500  C32CU 
+033A  C2ECL C2F8L 
+0500  C334U 
 0A7F  C003L 
-0A9A  C145P C152P C19CP C1B5P C2DDP 
-0FBD  C314L 
+0A9A  C145P C152P C19CP C1B5P C2DDP C319L 
+0FBD  C314L C31CL 
 21DD  C0B9U 
 2A2B  C2D3S 
-4036  C37AU 
+4036  C382U 
 4130  C0DBU 
 77DD  C0BEP 
 C000  C010U 
@@ -580,7 +581,7 @@ C07B  C076R
 C089  C06BR 
 C099  C052R 
 C0AB  C037U C03FU C09FU 
-C0BB  C092L C209L C229L C234L C254L C26CL C296L C35CL 
+C0BB  C092L C209L C229L C234L C254L C26CL C296L C364L 
 C0D5  C0C8R 
 C0DE  C0E2R 
 C0E8  C0F2R 
@@ -612,32 +613,31 @@ C28E  C289L
 C29A  C24EW C266W C28ES 
 C29C  C1F9L 
 C2A6  C2A8R 
-C2C6  C095L C284L C35FL 
+C2C6  C095L C284L C367L 
 C2D2  C08FX C1BFX C1D5X C1EBX C206T C226T C231T C251T C269T 
-      C280T C2C6T C359X 
+      C280T C2C6T C361X 
 C2D4  C1C4X C1DAX C1F0X C23DT C27CT 
 C2D5  C027P C167P C175P C187P 
 C2E0  C101L C106L C157L C17CL C181L C1A2L C1A7L C2C9L C2CEL 
-      C300L C307L 
+      C308L C30FL 
 C2E1  C2E5R 
-C2EB  C109L C15AL C1AAL C2EFR 
-C2F4  C117L 
-C2F8  C303R 
-C305  C2FER 
-C30B  C0FAU C2F4U 
-C30D  C0E4U 
-C311  C0D7L 
-C318  C032L C0A2L 
-C31A  C31FR 
-C323  C061L C084L C0D2L C223L C291L C353L 
-C32B  C0F7L C20CL C20FL C212L 
-C334  C000P C33CR C340R C34BR C362R 
-C342  C368L 
-C364  C345U 
-C37A  C334L 
-C380  C382R 
-C384  C388R 
-CD00  C30FL 
+C2F0  C109L C15AL C1AAL C2F4R 
+C2FC  C117L 
+C300  C30BR 
+C30D  C306R 
+C313  C0FAU C2FCU 
+C315  C0E4U 
+C319  C0D7L 
+C320  C032L C0A2L 
+C322  C327R 
+C32B  C061L C084L C0D2L C223L C291L C35BL 
+C333  C0F7L C20CL C20FL C212L 
+C33C  C000P C344R C348R C353R C36AR 
+C342  C370L 
+C36C  C34DU 
+C382  C33CL 
+C388  C38AR 
+C38C  C390R 
 FFAB  C078U 
 FFCE  C24BU 
 FFFF  C1FDU C2D9U 

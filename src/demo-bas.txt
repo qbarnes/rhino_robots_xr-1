@@ -9,9 +9,11 @@
 38 ' I$(xx) stores lines read in from help files
 39 ' D(x,xxx) stores moves for machine language routine
 40 DIM I$(70),D(7,100),E(5,100),S(5),D1(7,1)
-50 GOSUB 33000
-60 GOSUB 35000
-70 GOSUB 36000
+60 GOSUB 35000		   ' Ask for new X0 and Z0
+63 CLS : PRINT@535,"Seeking hard home."
+65 GOSUB 33000	   ' Call 'Hard Home'
+70 GOSUB 36000   ' Call fix base
+99 ' Main routine loop starts here
 100 GOSUB 10000  ' Display title
 110 GOSUB 11000  '    "    main menu
 120 L=3 : X9=0   ' Set options for keyboard input call
@@ -20,6 +22,7 @@
 150 IF C1=3 THEN PRINT:PRINT"Type 'RUN' to restart program" : END
 160 GOSUB 1000  ' Instructions/programs entry point
 170 GOTO 100
+999 ' Have user choose between instructions or programs.
 1000 GOSUB 10000
 1010 IF C1=1 THEN PRINT@277,"Instructions"; ELSE PRINT@279,"Programs";
 1020 PRINT" available."
@@ -35,20 +38,21 @@
 1200 ON C GOSUB 21000,21010,21020,21030  ' Get help filename
 1210 GOSUB 51000           ' Help file driver routine
 1220 GOTO 1000
+1499 ' Entry for the 4 sub-programs
 1500 ON C GOSUB 2000,3000,4000,5000
 1510 GOTO 1000
+1999 ' Entry for Key Board routine
 2000 GOSUB 10000
 2010 GOSUB 12000  ' Display keys
 2020 PRINT@984,"or 'X' to exit.";
 2030 I=USR1(0)  'Call KBoard routine
 2040 RETURN
+2999 ' Entry for executing a single move
 3000 GOSUB 10000
 3010 GOSUB 13000  ' Display motor info page
-3020 M1=1
+3020 M1=1        ' Set the move number
 3030 GOSUB 14000  ' Get a move (8 motor steps)
 3040 IF I$="X" THEN RETURN
-3050 D(0,0)=1
-3060 I=USR(VARPTR(D(0,0)))
 3070 GOTO 3000
 4000 GOSUB 10000
 4010 PRINT
@@ -124,7 +128,7 @@
 14090 GOTO 14030
 14100 D(I1,M1)=I
 14110 NEXT I1
-14115 GOSUB 34000
+14115 GOSUB 34000   ' Make copy of current move and execute
 14120 RETURN
 15000 PRINT TAB(24)"Do you want to:"
 15010 PRINT TAB(19)"1) Create a move sequence,"
@@ -156,10 +160,10 @@
 18000 GOSUB 10000
 18010 PRINTTAB(22); : INPUT"Name for saving file";I$
 18020 IF I$="X" THEN RETURN
-18030 ON ERROR GOTO 18000
+18030 ON ERROR GOTO 18000  ' Trap bad file names.
 18040 OPEN"O",1,I$
-18050 ON ERROR GOTO 0
-18060 FOR I1= 0 TO D(0,0)
+18050 ON ERROR GOTO 0    ' Clear trap
+18060 FOR I1= 0 TO D(0,0)  ' Write the data out
 18070 FOR I2= 0 TO 7
 18080 PRINT#1,D(I2,I1)
 18090 NEXT I2,I1
@@ -205,14 +209,16 @@
 20260 NEXT I1
 20270 'PRINTCHR$(29);
 20280 'IF LP=1 THEN PRINTCHR$(13);
+20285 IF D(0,0)<=0 THEN PRINT"No moves"; : GOTO 20340
 20290 FOR I1=1 TO D(0,0)
 20300 PRINT : PRINT STR$(I1);":";
 20310 FOR I2=0 TO 7
-20320 PRINT D(I2,I1);STRING$(7-LEN(STR$(D(I2,I1)))," ");
+20320 IF D(I2,I1)=-32768 THEN PRINT"HOME       "; ELSE PRINT D(I2,I1);STRING$(7-LEN(STR$(D(I2,I1)))," ");
 20330 NEXT I2,I1
 20340 PRINT : PRINT TAB(19)"Press <ENTER> to continue";
 20350 I$=INKEY$
 20360 IF I$<>CHR$(13) THEN 20350
+20365 IF D(0,0)<=0 THEN RETURN
 20370 GOSUB 10000
 20380 GOSUB 13000
 20390 PRINTCHR$(31);
@@ -385,9 +391,12 @@
 35040 PRINT TAB(28)"X0=";X0
 35050 PRINT TAB(28)"Z0=";Z0
 35060 PRINT
+35065 I$="N"
 35070 PRINT TAB(15);:INPUT"Do you wish to change these values";I$
-35080 IF I$="" THEN RETURN
-35090 IF LEFT$(I$,1)<>"Y" THEN RETURN
+35080 IF I$="" THEN 35070
+35090 IF I$ = "Y" THEN 35100
+35092 IF I$ = "N" THEN RETURN
+35096 GOTO 35070
 35100 PRINTTAB(28);:INPUT"New X0";X0
 35110 PRINTTAB(28);:INPUT"New Z0";Z0
 35120 RETURN

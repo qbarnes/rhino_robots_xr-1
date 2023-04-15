@@ -1,0 +1,23 @@
+The XYZ program requires that you first 'home' the robot.
+The shoulder should be 6.25 inches from the rear of the
+base.  The elbow cam should touch its switch when the elbow
+is positioned approximately 10 degrees below horizontal.
+The hand must point straight down and the fingers should be
+closed and aligned with the base.  The XYZ program requires
+as input the co-ordinates in millimeters of the point that
+you want to be in the fingertip centre.  For example a
+co-ordinate input having an X of 300, a Y of 300, and a Z
+of 200 will position the fingertips 300 mm to the left of
+the Rhino's centre and 200 mm up from the table.  You can
+also specify that the hand is not pointing straight down
+by giving the hand rotate prompt some angle other than zero.
+If you specify 90 degrees, the hand will be aligned parallel
+to the table top.  Specifying 135 degrees will make it point
+45 degrees up as if grasping from below.  The point reached
+by the fingertips will still be accurate when measured, but
+the approach will be from a different angle.  Be careful not
+to damage the hand's circuit board.  The fingers will remain
+aligned parallel to the base unless you specify some angular
+offset.  the fingers can be opened or closed as required.
+Move sequences that you create can be stored on disk as with
+the joint move program.  You can also edit a move sequence.
