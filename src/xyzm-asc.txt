@@ -1,0 +1,15 @@
+The 'Teach' program consists of four sections: 'create',
+'modify', 'save', and 'run'.  Move sequences are created
+by typing the number of steps you want each motor to move.
+To save a move sequence just entered, exit the 'create'
+routine with an 'X' and press '3' to save a move sequence.
+To change a move sequence that is saved on disk, read it
+into memory with the 'modify' option and then after it's
+read in, go back into the 'modify' routine and choose the
+option to edit the sequence currently in memory.  Once you
+have a move sequence in memory, you may execute it with
+the 'run' option.
+If you have a printer connected to this computer, you can
+get a listing of your move sequence in the 'modify' routine.
+Answer 'Y' to the 'send listing to the line printer'
+question.
