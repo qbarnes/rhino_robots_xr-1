@@ -22,18 +22,18 @@ will turn up, and I'll finally find out what was actually shipped.
 The files under `disk`:
 ```
 DEMO.BAS    The BASIC program for demoing the XR-1
-RHINO.DVR   The driver used by `DEMO/BAS` for communicating with the controller
-RHINO.TST   The `RHINO/DVR` file with debug tracing enabled
-RHINO.SRC   The Z-80 assembly source code for `RHINO/DVR`
-RS.BLD      Batch file for running `RHINO/BAS`
-STARTUP.BLD Boot batch file system initialization and running `RHINO/BAS`
+RHINO.DVR   The driver used by "DEMO/BAS" for communicating with the controller
+RHINO.TST   The "RHINO/DVR" file with debug tracing enabled
+RHINO.SRC   The Z-80 assembly source code for "RHINO/DVR"
+RS.BLD      Batch file for running "RHINO/BAS"
+STARTUP.BLD Boot batch file system initialization and running "RHINO/BAS"
 KBD.ASC     Help file describing arm motions controlled in real-time by keys
 IJTB.ASC    Help file for pre-programming a sequence of steps for each motor
 XYZM.ASC    Help file for 'teach' subprogram
 XYZS.ASC    Help file for 'XYZ' subprogram
 ```
 
-In tha top-level directory, `rhino.dmk` contains a DMK of the
+In the top-level directory, `rhino.dmk` contains a DMK of the
 fully bootable XR-1 demo disk for the TRS-80 Model 3.
 
 The `RHINO/TST` driver is built from the `RHINO/SRC` assembly file,
