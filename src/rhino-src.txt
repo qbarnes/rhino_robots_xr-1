@@ -1,7 +1,7 @@
 00100	;      ; Written by Quentin Barnes
 00110	;	     1023 Frederick Street
 00120	;	     Chester, IL 62233
-00130	;	     (618) 286-4743
+00130	;	     (618) 826-4743
 00140	;
 00150	; Machine language routine to be meant to be called from
 00160	; a BASIC program.  The information is passed via an

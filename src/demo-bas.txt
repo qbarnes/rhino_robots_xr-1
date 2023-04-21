@@ -75,7 +75,7 @@
 9999 ' Clears screen and displays title
 10000 CLS
 10010 PRINT@26,"Rhino Robots"
-10020 PRINT TAB(21)"Demonstation Diskette"
+10020 PRINT TAB(21)"Demonstration Diskette"
 10030 PRINT TAB(26)"Version 1.0"
 10040 RETURN
 10999 ' Main menu
