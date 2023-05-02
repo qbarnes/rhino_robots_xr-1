@@ -7,15 +7,15 @@ robotic arm manufactured by Rhino Robots of Champaign, Illinois.
 
 The `disk` directory has the files in their original TRS-80 format.
 
-The `src` directory has the converted files to a more readable form.
+The `src` directory has the files converted to a more readable form.
 If they're binary, they're disassembled.  If they're an editor file
 or text, they're converted into a more conventional ASCII format.
 
 The initial committed versions of some files are what I believe were
-older copies from a backup disk.  The final checkin on `master` is
-what I believe were the files that I delivered to Rhino Robots for
-their release.  Maybe some day a TRS-80 release disk for the XR-1
-will turn up, and I'll finally find out what was actually shipped.
+older copies from a backup disk.  The commit tagged with `delivered`
+is what I believe were the files as I delivered them to Rhino Robots
+for their release.  Maybe some day a TRS-80 disk for the XR-1 will
+turn up, and I'll finally find out what was actually shipped!
 
 ## Files
 
